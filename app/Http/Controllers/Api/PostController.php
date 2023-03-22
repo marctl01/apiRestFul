@@ -17,7 +17,8 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::all();
+        $posts=auth()->user()->post;
+        // $posts = Post::all();
         if($posts)
         return response()->json([
             'success'=>true,
@@ -64,6 +65,16 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
+        if($post){
+            return response()->json([
+                'success' => 'true',
+                'data' => $post
+            ]);
+        }
+        return response()->json([
+            'success' => 'false',
+            'data' => 'Post not found'
+        ]);
     }
 
     /**
