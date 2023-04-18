@@ -20,11 +20,6 @@ use App\Http\Controllers\Api\PostController;
 */
 
 
-// GET USER
-// POST USER
-// DELETE USER
-// PUT USER
-
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) { return $request->user(); });
 
 // Route::post('register', [AuthController::class, 'register']);
@@ -38,6 +33,7 @@ Route::resource('post', PostController::class)->middleware(['auth:sanctum']);
 
 // CRUD Proveedor
 // CREATE
+
 
 // READ
 
