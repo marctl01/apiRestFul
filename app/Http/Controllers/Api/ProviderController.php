@@ -33,6 +33,8 @@ class ProviderController extends Controller
         $provider->name = $request->name;
         $provider->phone = $request->phone;
         $provider->save();
+
+        return response()->json(["msj"=>"Provider generado correctamente"]);
     }
 
     /**
