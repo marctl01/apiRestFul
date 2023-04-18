@@ -19,9 +19,13 @@ use App\Http\Controllers\Api\PostController;
 |
 */
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+// GET USER
+// POST USER
+// DELETE USER
+// PUT USER
+
+Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) { return $request->user(); });
 
 Route::post('register', [AuthController::class, 'register']);
 
