@@ -30,27 +30,32 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::resource('post', PostController::class)->middleware(['auth:sanctum']);
 
+Route::middleware(['auth:sanctum'])->group(function(){
+    
+    // CRUD Proveedor
+    Route::resource('/productos',ProductoController::class);
 
-// CRUD Proveedor
-// CREATE
+    // CREATE
+        Route::post('products', 'ProductController@store'); // Crear un nuevo producto
+
+    // READ
+        Route::get('products', 'ProductController@index'); // Listar todos los productos
+        Route::get('products/{id}', 'ProductController@show'); // Mostrar un producto específico
+        
+    // UPDATE
+        Route::put('products/{id}', 'ProductController@update'); // Actualizar un producto
+        
+    // DELETE
+        Route::delete('products/{id}', 'ProductController@destroy'); // Eliminar un producto
+        
+
+});
 
 
-// READ
-
-// UPDATE
-
-// DELETE
 
 
 
-// CRUD Productes
-// CREATE
 
-// READ
-
-// UPDATE
-
-// DELETE
 
 
 
