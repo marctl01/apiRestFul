@@ -47,7 +47,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
 
     // CRUD Proveedor
         // CREATE
-            Route::post('provider', [ProviderController::class, 'store']); // Crear un nuevo producto
+            Route::post('providers', [ProviderController::class, 'store']); // Crear un nuevo producto
 
         // READ
             Route::get('providers', [ProviderController::class, 'index']); // Listar todos los productos
