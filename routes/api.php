@@ -8,9 +8,6 @@ use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProviderController;
 
-
-
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -34,7 +31,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::resource('post', PostController::class)->middleware(['auth:sanctum']);
 
 Route::middleware(['auth:sanctum'])->group(function(){
-    // CRUD Proveedor
+    // CRUD Product
         // CREATE
             Route::post('products', [ProductController::class, 'store']); // Crear un nuevo producto
 
@@ -47,6 +44,20 @@ Route::middleware(['auth:sanctum'])->group(function(){
             
         // DELETE
             Route::delete('products/{id}', [ProductController::class, 'destroy']); // Eliminar un producto
+
+    // CRUD Proveedor
+        // CREATE
+            Route::post('provider', [ProviderController::class, 'store']); // Crear un nuevo producto
+
+        // READ
+            Route::get('providers', [ProviderController::class, 'index']); // Listar todos los productos
+            Route::get('providers/{id}', [ProviderController::class, 'show']); // Mostrar un producto específico
+            
+        // UPDATE
+            Route::put('providers/{id}', [ProviderController::class, 'update']); // Actualizar un producto
+            
+        // DELETE
+            Route::delete('providers/{id}', [ProviderController::class, 'destroy']); // Eliminar un producto
 
 });
 

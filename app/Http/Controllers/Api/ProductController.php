@@ -37,6 +37,8 @@ class ProductController extends Controller
         $product->prov_id = $request->prov_id;
         $product->save();
 
+        return response()->json(["msj"=>"Producto generado correctamente"]);
+
     }
 
     /**
