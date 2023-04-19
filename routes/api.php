@@ -47,17 +47,17 @@ Route::middleware(['auth:sanctum'])->group(function(){
 
     // CRUD Proveedor
         // CREATE
-            Route::post('providers', [ProviderController::class, 'store']); // Crear un nuevo producto
+            Route::post('providers', [ProviderController::class, 'store']); // Crear un nuevo proveedor
 
         // READ
-            Route::get('providers', [ProviderController::class, 'index']); // Listar todos los productos
-            Route::get('providers/{id}', [ProviderController::class, 'show']); // Mostrar un producto específico
+            Route::get('providers', [ProviderController::class, 'index']); // Listar todos los proveedores
+            Route::get('providers/{id}', [ProviderController::class, 'show']); // Mostrar un proveedor específico
             
         // UPDATE
-            Route::put('providers/{id}', [ProviderController::class, 'update']); // Actualizar un producto
+            Route::put('providers/{id}', [ProviderController::class, 'update']); // Actualizar un proveedor
             
         // DELETE
-            Route::delete('providers/{id}', [ProviderController::class, 'destroy']); // Eliminar un producto
+            Route::delete('providers/{id}', [ProviderController::class, 'destroy']); // Eliminar un proveedor
 
 });
 
